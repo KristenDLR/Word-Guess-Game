@@ -1,43 +1,57 @@
 header {
-  border: 1px solid black;
-  height: 300px;
-  widows: 300px;
-  font-size:20px;
-  text-align:center;
-  margin:25px auto;
-  width:80%;
-}
-
-.underscore{
-  border: 1px solid black;
-  height: 150px;
-  widows: 300px;
-  font-size:50px;
-  text-align:center;
-  margin:25px auto;
-  width:80%;
-}
-
-.rightGuess{
-  border: 1px solid black;
-  height: 150px;
-  widows: 20px;
-  font-size:20px;
-  text-align:center;
+  border: 20px solid white;
+  height: 100px;
+  /* widows: 300px; */
+  font-size: 20px;
+  text-align: center;
   margin: 25px auto;
-  width:80%;
+  width: 80%;
+  color: black;
 }
 
-.wrongGuess{
-  border: 1px solid black;
+.underscore {
+  border: 1px solid white;
+  height: 150px;
+  widows: 300px;
+  font-size: 50px;
+  text-align: center;
+  margin: 25px auto;
+  width: 80%;
+  /* color: white; */
+}
+
+.rightGuess {
+  border: 1px solid white;
   height: 150px;
   widows: 20px;
-  font-size:20px;
-  text-align:center;
-  margin:25px auto;
-  width:80%;
+  font-size: 20px;
+  text-align: center;
+  margin: 25px auto;
+  width: 80%;
+  color: white;
 }
 
-body{
-  background-image: url "./assets/images/redcurtain.jpg";
+.wrongGuess {
+  border: 1px solid white;
+  height: 150px;
+  widows: 20px;
+  font-size: 20px;
+  text-align: center;
+  margin: 25px auto;
+  width: 80%;
+  color: white;
+}
+
+body {
+  /* background-image: url("../images/movieScreen.jpg");
+  background-size: 99%; */
+  background: blue;
+}
+
+/* footer{
+  background-color:rgba(255, 255, 255, 0.468);
+} */
+#msc {
+  width: 1000px;
+  text-align: center;
 }

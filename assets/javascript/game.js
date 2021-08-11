@@ -1,128 +1,142 @@
+// Creating an array that list out the possble options (Classic Movies)
+var movie = ["casablanca", "pyscho", "jaws", "citizen kane"];
+// "citzen kane", "the wizard of oz", "singing in the rain", "rear window", "its a wonderful life",  "dr. strangelove", "it happened one night", "vertigo", "forest gump", "one flew over the cukoo's nest", "dazed and confused", "in the heat of the night"];
 
-  // Creating an array that list out the possble options (Classic Movies)
-  const  movie = ["casablanca", "pyscho","jaws","citizen kane"]
+// Global Variables
+// Choose word randomly
+var randomIndex = Math.floor(Math.random() * movie.length);
+console.log(randomIndex);
+var randomMovie = movie[randomIndex];
+console.log(randomMovie);
+var rightWord = [];
+var wrongWord = [];
 
+//choose movies with no spaces
+var space = " ";
 
-  // "citzen kane", "the wizard of oz", "singing in the rain", "rear window", "its a wonderful life",  "dr. strangelove", "it happened one night", "vertigo", "forest gump", "one flew over the cukoo's nest", "dazed and confused", "in the heat of the night"];
+//DOM manipulation
+var screenUnderscore = document.getElementsByClassName("underscore");
+var wrongGuessBox = document.getElementsByClassName("wrongGuess");
 
-  // Global Variables
-  // Choose word randomly
-  let randomIndex = Math.floor(Math.random() * movie.length);
-  let randomMovie = movie[randomIndex];
-  console.log(randomMovie);
-  let rightWord = [];
-  let wrongWord =[];
-  let spaces = " ";
-  let wordString = [];
+var rightGuess = [];
 
+var underScore = [];
 
-
-  //DOM manipulation
-  let screenUnderscore = document.getElementsByClassName("underscore");
-  let wrongGuessBox = document.getElementsByClassName("wrongGuess");
-
-  let rightGuess = [];
-
-  let underScore = [];
-
-  for (i = 0; i < currentWord.length; i++) {
-    wordString.push("_");
-    document.getElementById("word-string").innerHTML = wordString.join(" ");
+//function with for loop to run through array of movie 1st and replace spaces.
+for (let s = 0; s < randomMovie.length; s++) {
+  if (randomMovie[s] === space)
+  var movieSpace = randomMovie.indexOf(" ");
 
 
-  // Create underscores based on length of word
-let createUnderscore = () => {
-  for(let i = 0; i < randomMovie.length; i++){
-    underScore.push(" _ ")
+};console.log(movieSpace);
+ // replace underscore with correct letter
 
+// for(var s = 0; s < randomMovie.length; s++){
+//   indexOf(" ") === s;
+//   console.log(indexOf(" ") === s);
+// }
+// var spaces = movie.indexOf(" ");
 
+//_________________________________
+document.addEventListener("keypress", (event) => {
+  var keyword = event.key;
+  console.log(event);
 
+  // spaces =  function () {
+  //   // wordHolder = document.getElementById('hold');
+
+  //   for (var s = 0; i < randomMovie.length; s++) {
+  //     if (randomMovie[s] === "-") {
+  //       ("-").innerHTML = s;
+  //       space = 1;
+
+  // randomMovieLength = randomMovie.length;
+
+  // If users guess is right
+  if (randomMovie.indexOf(keyword) !== -1) {
+    console.log(true);
+
+    //add to rightWord array
+    rightWord.push(keyword);
+    console.log(rightWord);
+
+    // replace underscore with correct letter
+    for (var i = 0; i < underScore.length; i++) {
+      console.log("randomMovie[i]:", randomMovie[i]);
+      if (keyword === randomMovie[i]) {
+        underScore[i] = randomMovie[i];
+      }
+    }
+
+    underScore[randomMovie.indexOf(keyword)] = keyword;
+
+    console.log(underScore);
+    screenUnderscore[0].innerHTML = underScore.join("");
+    if (underScore.join("") == randomMovie) {
+      alert("You Win!");
+    }
   }
+  // /add to wrongWord array
+  else {
+    wrongWord.push(keyword);
+    console.log(wrongWord);
+    wrongGuessBox[0].innerHTML = wrongWord;
+  }
+});
+//_____________________
+
+// Create underscores based on length of word
+var createUnderscore = () => {
+  for (var i = 0; i < randomMovie.length; i++) {
+    underScore.push(" _ ");
+  }
+
   screenUnderscore[0].innerHTML = underScore.join("");
-  return underScore;
+  // return underScore;
+  // if(randomMovie.indexOf(spaces) !== -1){
 
   // if(randomMovie.indexOf(spaces))
   //   underScore.replace(spaces);
   //   console.log(spaces)
+};
+
+createUnderscore();
+
+//___________________________________________
+
+for (s = 0; s < randomMovie.length; s++) {
+  if (randomMovie[s] === "-") {
+    screenUnderscore[0].innerHTML = randomMovie[s].join("");
+  }
+
+  // var spaces = document.createElement("id");
+  // s = spaces;
+  // randomMovie = randomMovie.replace("_", " ");
 }
 
-createUnderscore()
+// Gets users guess
 
+//input box in a model, compare with randomMovie
+//if input lenth is less than 2 then
 
-  // Gets users guess
-  document.addEventListener("keypress",(event) => {
-   let keyword = event.key;
-    console.log(event);
+// screenUnderscore[0].innerHTML = createUnderscore().join(" ");
 
-    // If users guess is right
-    if(randomMovie.indexOf(keyword) !== -1){
-      console.log(true);
+// Check if guess is right
+// if right push to right array
+// if wrong push to wrong array
 
+//will spaces and ' be a problem?
 
-      //add to rightWord array
-      rightWord.push(keyword);
-      console.log(rightWord);
+//creating variables to hold the number of wins, and guesses.
 
-      // replace underscore with correct letter
-      for(var i =0; i < underScore.length; i++){
-        console.log("randomMovie[i]:", randomMovie[i]);
-        if (keyword === randomMovie[i]) {
-          underScore[i] = randomMovie[i];
-        } else {
-        }
-      }
-
-      underScore[randomMovie.indexOf(keyword)] = keyword;
-
-
-
-      console.log(underScore);
-      screenUnderscore[0].innerHTML = underScore.join("");
-        if (underScore.join("") == randomMovie) {
-          alert("You Win!");
-        }
-
-    }
-
-
-
-    // /add to wrongWord array
-
-    else  {
-      wrongWord.push(keyword);
-      console.log(wrongWord);
-      wrongGuessBox [0].innerHTML = wrongWord;
-    }
-  });
-
-  // screenUnderscore[0].innerHTML = createUnderscore().join(" ");
-
-  // Check if guess is right
-  // if right push to right array
-  // if wrong push to wrong array
-
-
-
-  //will spaces and ' be a problem?
-
-  //creating variables to hold the number of wins, and guesses.
-
-  // var wins = 0;
-  // var guesses left = 9;
-
+// var wins = 0;
+// var guesses left = 9;
 
 // Create variables that hold references
 // var directionsText = document.getElementById("direction-text");
 // var userChoiceText = document.getElementById("userchoice-text");
 // var winsText = document.getElementById("wins-text");
 // var randomMovie = document.getElementById("")
-
-
-
-//   // randomly chooses movie
-
-
-
 
 //     // "casablanca"()
 //       document.write("_ _ _ _ _ _ _ _ _");
