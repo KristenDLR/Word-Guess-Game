@@ -1,5 +1,5 @@
 // Creating an array that list out the possble options (Classic Movies)
-var movie = ["casablanca", "pyscho", "jaws", "citizen kane"];
+var movie = ["casablanca", "pyscho", "jaws", "citizen kane", "rear window", "the wizard of oz"];
 // "citzen kane", "the wizard of oz", "singing in the rain", "rear window", "its a wonderful life",  "dr. strangelove", "it happened one night", "vertigo", "forest gump", "one flew over the cukoo's nest", "dazed and confused", "in the heat of the night"];
 
 // Global Variables
@@ -13,6 +13,7 @@ var wrongWord = [];
 
 //choose movies with no spaces
 var space = " ";
+var spaces
 
 //DOM manipulation
 var screenUnderscore = document.getElementsByClassName("underscore");
@@ -22,13 +23,27 @@ var rightGuess = [];
 
 var underScore = [];
 
+var movieSpace
+
 //function with for loop to run through array of movie 1st and replace spaces.
-for (let s = 0; s < randomMovie.length; s++) {
-  if (randomMovie[s] === space)
-  var movieSpace = randomMovie.indexOf(" ");
+var findSpace = function(){
+  for (let s = 0; s < randomMovie.length; s++) {
+  if(randomMovie[s] === space){
+    rightGuess.innerHTML = " ";
+    spaces ++
+  }
+  movieSpace = parseInt(randomMovie.indexOf(" "));
 
-
+  // var j = movieSpace
+  // randomMovie[movieSpace] = innerHTML." ";
 };console.log(movieSpace);
+};
+findSpace();
+// console.log(randomMovie[movieSpace]);
+// .innerHTML = space;
+// if(movieSpace === randomMovie.indexOf(" "))
+
+// console.log("check this out" + movieSpace.indexOf(randomMovie));
  // replace underscore with correct letter
 
 // for(var s = 0; s < randomMovie.length; s++){
