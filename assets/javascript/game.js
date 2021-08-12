@@ -1,5 +1,12 @@
 // Creating an array that list out the possble options (Classic Movies)
-var movie = ["casablanca", "pyscho", "jaws", "citizen kane", "rear window", "the wizard of oz"];
+var movie = [
+  "CASABLANCA",
+  "PYSCHO",
+  "JAWS",
+  "CITIZEN KANE",
+  "REAR WINDOW",
+  "THE WIZARD OF OZ",
+];
 // "citzen kane", "the wizard of oz", "singing in the rain", "rear window", "its a wonderful life",  "dr. strangelove", "it happened one night", "vertigo", "forest gump", "one flew over the cukoo's nest", "dazed and confused", "in the heat of the night"];
 
 // Global Variables
@@ -10,10 +17,10 @@ var randomMovie = movie[randomIndex];
 console.log(randomMovie);
 var rightWord = [];
 var wrongWord = [];
-
+var exitAr = 0;
 //choose movies with no spaces
 var space = " ";
-var spaces
+var spaces;
 
 //DOM manipulation
 var screenUnderscore = document.getElementsByClassName("underscore");
@@ -23,20 +30,22 @@ var rightGuess = [];
 
 var underScore = [];
 
-var movieSpace
+var movieSpace;
+console.log("beginning:" + exitAr);
 
 //function with for loop to run through array of movie 1st and replace spaces.
-var findSpace = function(){
+var findSpace = function () {
   for (let s = 0; s < randomMovie.length; s++) {
-  if(randomMovie[s] === space){
-    rightGuess.innerHTML = " ";
-    spaces ++
-  }
-  movieSpace = parseInt(randomMovie.indexOf(" "));
+    if (randomMovie[s] === space) {
+      rightGuess.innerHTML = " ";
+      spaces++;
+    }
+    movieSpace = parseInt(randomMovie.indexOf(" "));
 
-  // var j = movieSpace
-  // randomMovie[movieSpace] = innerHTML." ";
-};console.log(movieSpace);
+    // var j = movieSpace
+    // randomMovie[movieSpace] = innerHTML." ";
+  }
+  console.log(movieSpace);
 };
 findSpace();
 // console.log(randomMovie[movieSpace]);
@@ -44,7 +53,7 @@ findSpace();
 // if(movieSpace === randomMovie.indexOf(" "))
 
 // console.log("check this out" + movieSpace.indexOf(randomMovie));
- // replace underscore with correct letter
+// replace underscore with correct letter
 
 // for(var s = 0; s < randomMovie.length; s++){
 //   indexOf(" ") === s;
@@ -54,7 +63,7 @@ findSpace();
 
 //_________________________________
 document.addEventListener("keypress", (event) => {
-  var keyword = event.key;
+  var keyword = event.key.toUpperCase();
   console.log(event);
 
   // spaces =  function () {
@@ -94,21 +103,27 @@ document.addEventListener("keypress", (event) => {
   // /add to wrongWord array
   else {
     wrongWord.push(keyword);
-    console.log(wrongWord);
+    console.log("wrong guess: " + wrongWord);
     wrongGuessBox[0].innerHTML = wrongWord;
-  exitSign();
-
-
+    exitSign();
   }
 });
 //_____________________
+var sign = ["E", "X", "I", "T"];
 
-var exitSign = function(){
+for(let e = 0; e < sign.length; e++) {
 
-  exit = document.getElementById("exit");
-  exit.querySelector(".end").innerHTML = "EXIT"
+}
+var exitSign = function () {
 
+  if (wrongGuessBox === exitAr)
+  return
+  var exit = document.getElementById("exit");
+  exit.querySelector(".end").innerHTML = "E";
+  exitAr ++;
+  console.log("this  " + exitAr);
 };
+
 // Create underscores based on length of word
 var createUnderscore = () => {
   for (var i = 0; i < randomMovie.length; i++) {
