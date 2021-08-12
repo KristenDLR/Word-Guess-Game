@@ -96,10 +96,19 @@ document.addEventListener("keypress", (event) => {
     wrongWord.push(keyword);
     console.log(wrongWord);
     wrongGuessBox[0].innerHTML = wrongWord;
+  exitSign();
+
+
   }
 });
 //_____________________
 
+var exitSign = function(){
+
+  exit = document.getElementById("exit");
+  exit.querySelector(".end").innerHTML = "EXIT"
+
+};
 // Create underscores based on length of word
 var createUnderscore = () => {
   for (var i = 0; i < randomMovie.length; i++) {

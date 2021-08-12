@@ -1,23 +1,23 @@
 header {
   border: 20px solid white;
-  height: 100px;
+  /* height: 100px; */
   /* widows: 300px; */
   font-size: 20px;
   text-align: center;
   margin: 25px auto;
-  width: 80%;
-  color: black;
+  width: 65%;
+  color:white;
 }
 
 .underscore {
-  border: 1px solid white;
-  height: 150px;
+  /* border: 1px solid white; */
+  /* height: 150px; */
   widows: 300px;
   font-size: 50px;
   text-align: center;
   margin: 25px auto;
   width: 80%;
-  /* color: white; */
+  color: white;
 }
 
 .rightGuess {
@@ -27,7 +27,7 @@ header {
   font-size: 20px;
   text-align: center;
   margin: 25px auto;
-  width: 80%;
+  width: 65%;
   color: white;
 }
 
@@ -38,7 +38,7 @@ header {
   font-size: 20px;
   text-align: center;
   margin: 25px auto;
-  width: 80%;
+  width: 65%;
   color: white;
 }
 html {
@@ -46,18 +46,13 @@ html {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: fill;
 }
 
-/* body {
-  background-image: url("../images/movieScreen3.jpg");
-  /* background-size: 99%; */
-  /* background: blue; */
-} */
+.end {
+color: hotpink;
+}
 
-/* footer{
-  background-color:rgba(255, 255, 255, 0.468);
-} */
 #msc {
   width: 1000px;
   text-align: center;
