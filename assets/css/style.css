@@ -1,16 +1,16 @@
 h1{
-  border: 20px solid white;
+  border: 20px solid rgb(174, 207, 23);
   /* height: 100px; */
   /* widows: 300px; */
   font-size: 20px;
   text-align: center;
   margin: 25px auto;
   width: 65%;
-  color:white;
+  color:rgb(247, 243, 15);
 }
 
 h3{
-  color: white;
+  color: rgb(235, 231, 14);
   font-size: 20px;
   text-align: center;
 }
@@ -50,9 +50,9 @@ h3{
 }
 
 
-.end {
+/* .end {
 color: hotpink;
-}
+} */
 
 #msc {
   width: 1000px;
