@@ -11,7 +11,7 @@ var movie = [
 
 // Global Variables
 // Choose word randomly
-var randomIndex = Math.floor(Math.random() * movie.length);
+var randomIndex = [Math.floor(Math.random() * movie.length)];
 console.log(randomIndex);
 var randomMovie = movie[randomIndex];
 console.log(randomMovie);
@@ -41,11 +41,16 @@ var findSpace = function () {
       spaces++;
     }
     movieSpace = parseInt(randomMovie.indexOf(" "));
+    var indRanMov = randomMovie.split("").join(", ");
+    var map1 = underScore
 
+    // randomMovie[movieSpace].innerHTML = " ";
     // var j = movieSpace
     // randomMovie[movieSpace] = innerHTML." ";
   }
+  console.log(randomMovie);
   console.log(movieSpace);
+  console.log(indRanMov);
 };
 findSpace();
 // console.log(randomMovie[movieSpace]);
@@ -111,16 +116,12 @@ document.addEventListener("keypress", (event) => {
 //_____________________
 var sign = ["E", "X", "I", "T"];
 
-for(let e = 0; e < sign.length; e++) {
-
-}
+for (let e = 0; e < sign.length; e++) {}
 var exitSign = function () {
-
-  if (wrongGuessBox === exitAr)
-  return
+  if (wrongGuessBox === exitAr) return;
   var exit = document.getElementById("exit");
   exit.querySelector(".end").innerHTML = "E";
-  exitAr ++;
+  exitAr++;
   console.log("this  " + exitAr);
 };
 
